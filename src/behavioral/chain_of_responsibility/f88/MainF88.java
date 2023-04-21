@@ -11,6 +11,6 @@ public class MainF88 {
                 .capCaoHon(truongPhong)
                 .capCaoHon(phoGiamDoc)
                 .capCaoHon(giamDoc);
-        System.out.printf(gacCong.xuLyKhoanVay(30000000));
+        System.out.printf(gacCong.xuLyKhoanVay(300000000));
     }
 }
