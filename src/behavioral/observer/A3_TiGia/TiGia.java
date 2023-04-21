@@ -21,7 +21,7 @@ public class TiGia {
         }
     }
 
-    static public interface I_TheoDoiTiGia {
+     public static interface I_TheoDoiTiGia {
         void capNhatTiGia(float delta);
     }
 }

@@ -1,7 +1,7 @@
 package creational.factory;
 
 public class MamTomPizza extends Pizza {
-    // sử dụng nội
+
     @Override
     void prepare() {
         builder.append("Mắm tôm và thịt cầy ướp riềng, sả\n");

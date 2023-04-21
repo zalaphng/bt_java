@@ -1,4 +1,4 @@
-package creational.singleton.bt3;
+package creational.factory.bt3;
 
 public abstract class Shape {
     String brush;
