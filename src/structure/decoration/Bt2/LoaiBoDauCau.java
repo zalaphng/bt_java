@@ -18,7 +18,10 @@ public class LoaiBoDauCau extends TokenizeDecorator{
         List<String> newList = new ArrayList<>();
 
         for (String s : list) {
-            if (s.endsWith(",") || s.endsWith(";")) {
+            if (s.equals("")){
+                continue;
+            }
+            else if (s.endsWith(",") || s.endsWith(";")) {
                 String[] arr = s.split(",|;");
                 String res = arr[arr.length-1];
                 newList.add(res);
