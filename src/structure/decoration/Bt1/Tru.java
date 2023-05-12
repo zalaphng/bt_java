@@ -1,4 +1,4 @@
-package structure.decoration.D1;
+package structure.decoration.Bt1;
 
 public class Tru extends BieuThucDecorator{
     float toanHang;

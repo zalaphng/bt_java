@@ -1,6 +1,6 @@
-package structure.decoration.D1;
+package structure.decoration.Bt1;
 
-public class MainD1 {
+public class MainBt1 {
     public static void main(String[] args) {
         BieuThuc b = new BieuThucDonGian(6);
         b = new Cong(b, 9);
