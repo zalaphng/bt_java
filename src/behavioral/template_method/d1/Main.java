@@ -1,8 +1,8 @@
 package behavioral.template_method.d1;
 
 import java.util.ArrayList;
-public class main {
-    public static void main(String[] args) {
+public class Main {
+    public static void Main(String[] args) {
         ArrayList<HangHoa> dsHangHoa = new ArrayList<>();
 
         dsHangHoa.add(new HangHoa("San pham 1",1,1000));

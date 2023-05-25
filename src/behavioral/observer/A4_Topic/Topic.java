@@ -3,46 +3,47 @@ package behavioral.observer.A4_Topic;
 import java.util.ArrayList;
 import java.util.List;
 
-class Topic {
-    private List<Observer> observers;
-    private List<String> messages;
+public class Topic {
+    List<INhanTin> observers = new ArrayList<>();
 
-    public Topic() {
-        observers = new ArrayList<>();
-        messages = new ArrayList<>();
-    }
+    List<TinTuc> tinTucs = new ArrayList<>();
 
-    public void createMessage(String message) {
-        messages.add(message);
-        notifyObservers();
-    }
-
-    public void updateMessage(int index, String message) {
-        messages.set(index, message);
-        notifyObservers();
-    }
-
-    public void registerObserver(Observer observer) {
-        if (!observers.contains(observer)){
-            observers.add(observer);
+    public void attach(INhanTin nhanTin){
+        if (!observers.contains(nhanTin)){
+            observers.add(nhanTin);
         }
     }
 
-    public void removeObserver(Observer observer) {
-        if (observers.contains(observer)){
-            observers.remove(observer);
+    public void detach(INhanTin nhanTin){
+        if (observers.contains(nhanTin)){
+            observers.remove(nhanTin);
         }
     }
 
-    public void notifyObservers() {
-        for (Observer observer : observers) {
-            observer.update(messages);
+//    không cho đứa khác gọi
+    private void notifyTin(TinTuc t){
+        for (INhanTin nhanTin:
+                observers) {
+            nhanTin.capNhat(t);
         }
     }
 
-    public static interface Observer {
-        void update(List<String> messages);
+    public void taoMoi(TinTuc t){
+        tinTucs.add(t);
+        notifyTin(t);
     }
 
+    public void capNhat(TinTuc t){
+        for (TinTuc old : tinTucs) {
+            if (old.id == t.id){
+                old.noiDung = t.noiDung;
+                notifyTin(t);
+                break;
+            }
+        }
+    }
+
+    public static interface INhanTin {
+        public void capNhat(TinTuc t);
+    }
 }
-

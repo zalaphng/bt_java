@@ -2,30 +2,19 @@ package behavioral.observer.A4_Topic;
 
 public class Main {
     public static void main(String[] args) {
-        Topic topic = new Topic();
 
-        MemberA memberA = new MemberA(topic);
-        MemberB memberB = new MemberB(topic);
+        Topic t = new Topic();
 
-        System.out.printf("\n====== Create Message ====== \n");
-        topic.createMessage("Hello, World!");
+        ThanhVienA a = new ThanhVienA(t);
+        ThanhVienB b = new ThanhVienB(t);
 
-        System.out.printf("\n====== Create 2nd Message ====== \n");
-        topic.createMessage("Hello, World Again!");
+        a.dangKy();
+        b.dangKy();
 
-        System.out.printf("\n====== Update Message ====== \n");
-        topic.updateMessage(0, "Hello, Observer Pattern!");
+        t.taoMoi(new TinTuc("Hello", 1));
+        t.taoMoi(new TinTuc("Hello 2", 2));
+        t.taoMoi(new TinTuc("Hello 3", 3));
 
-        System.out.printf("\n====== Member B Out  ====== \n");
-        memberB.cancelRegistration();
-
-        System.out.printf("\n====== Create Message ====== \n");
-        topic.createMessage("Goodbye!");
-
-        System.out.printf("\n====== Member B Register Again  ====== \n");
-        memberB.register();
-
-        System.out.printf("\n====== Update Message ====== \n");
-        topic.updateMessage(0, "Goodbye, Observer Pattern!");
+        t.capNhat(new TinTuc("Hello 4", 2));
     }
 }

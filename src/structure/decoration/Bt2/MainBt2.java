@@ -14,7 +14,7 @@ public class MainBt2 {
 
     public static void main(String[] args) {
 
-        String s = "Test hoặc Sentences   Sentences, thì Sentences là Sentences;";
+        String s = "Test hoặc Sentences Sentences, thì Sentences là Sentences;";
         Tokenize t = new Token(s);
         System.out.printf("" + ToString(t.tokenize()));
 
